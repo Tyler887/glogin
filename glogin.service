@@ -4,6 +4,7 @@ After=gdm.target
 
 [Service]
 ExecStart=/usr/sbin/glogind
+User=root
 Restart=on-failure
 
 [Install]
