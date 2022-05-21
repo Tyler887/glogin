@@ -3,9 +3,7 @@ ENTRY=`zenity --password --username --title=$(lsb_release -s -i)`
 
 case $? in
          0)
-	 	echo "User Name: `echo $ENTRY | cut -d'|' -f1`"
-	 	echo "Password : `echo $ENTRY | cut -d'|' -f2`"
-		;;
+	 	echo `$ENTRY | cut -d'|' -f2` | su "`echo $ENTRY | cut -d'|' -f1`" -c gnome-session;;
          1)
                 zenity --warning --title="$(lsb_release -s -i)" --text="Login cancelled. Starting root session for maintenance."
                 gnome-session
