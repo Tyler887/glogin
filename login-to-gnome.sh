@@ -1,3 +1,4 @@
+#!/bin/bash
 ENTRY=`zenity --password --username --title=$(lsb_release -s -i)`
 
 case $? in
