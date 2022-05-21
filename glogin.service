@@ -1,7 +1,10 @@
-[Init]
-Description=Login Prompt
+[Unit]
+Description=Login prompt
 After=gdm.target
 
 [Service]
 ExecStart=/usr/sbin/glogind
 Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
